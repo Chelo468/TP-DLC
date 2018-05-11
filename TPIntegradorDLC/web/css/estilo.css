@@ -1,0 +1,10 @@
+.form-control{
+    width: 90% !important;
+}
+.form-inline{
+    margin-top: 30px;
+}
+
+#thresultatos{
+    text-align: center !important;
+}

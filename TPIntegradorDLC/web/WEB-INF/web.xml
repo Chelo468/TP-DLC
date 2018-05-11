@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>CtrIndex</servlet-name>
+        <servlet-class>dlc.sac.web.ctrl.index.CtlrIndex</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CtrlIndexador</servlet-name>
+        <servlet-class>dlc.sac.web.ctrl.indexador.CtrlIndexador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CtlrArchivo</servlet-name>
+        <servlet-class>dlc.sac.web.ctrl.archivo.CtrlArchivo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CtrlAlmacenadorDB</servlet-name>
+        <servlet-class>dlc.sac.web.ctrl.almacenadorDB.CtrlAlmacenadorDB</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CtrIndex</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlIndexador</servlet-name>
+        <url-pattern>/indexador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtlrArchivo</servlet-name>
+        <url-pattern>/archivo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlAlmacenadorDB</servlet-name>
+        <url-pattern>/success</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index</welcome-file>
+    </welcome-file-list>
+</web-app>
