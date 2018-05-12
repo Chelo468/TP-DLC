@@ -42,7 +42,8 @@
             <div class="row">
                 <form method="POST" action="indexador" class="form-inline">
                     <div class="form-group col-xs-8">
-                        <input type="text" name="url" class="form-control" value="C:\Users\Chelo\Documents\UTN\DocumentosTP\\docu.txt"></div> 
+                        <input type="text" name="url" class="form-control" value="C:\Users\Chelo\Documents\UTN\Cuarto\DLC\TP\DocumentosTP1\para subir\\"></div> 
+                        <input type="text" name="urlDestino" class="form-control" value="C:\Users\Chelo\Documents\UTN\Cuarto\DLC\TP\DocumentosTP1\subidos\\"></div> 
                         <%--<input type="file" name="file" id="ejemplo_archivo_1">--%>
                     <input type="submit" value="Indexar" class="btn btn-default col-xs-4">
                 </form>

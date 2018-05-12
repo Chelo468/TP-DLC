@@ -34,7 +34,8 @@ public class CtrlIndexador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = (String)request.getParameter("url");
-        SAC.copyFileStream(url);
+        String urlDestino = (String)request.getParameter("urlDestino");
+        SAC.copyFileStream(url, urlDestino);
         //SAC.indexarDocumentosFS();
         //SAC.indexarNuevoDocumento(url);
         ServletContext app = this.getServletContext();

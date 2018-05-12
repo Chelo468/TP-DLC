@@ -124,28 +124,43 @@ public abstract class SAC {
         }
     }
 
-    public static void copyFileStream(String sourcePath) throws IOException {
+    public static void copyFileStream(String sourcePath, String pathDestino) throws IOException {
 
         if (sourcePath != null) {
             InputStream is = null;
             OutputStream os = null;
-            File source = new File(sourcePath);
-            File dest = new File("C:\\Users\\Chelo\\Documents\\UTN\\DocumentosTP\\documentos\\" + source.getName());
+            
+            //Agregado
+            File dir = new File(sourcePath);
+            String[] ficheros = dir.list();
+            String nombreFichero;
+            String pathArchivo;
+            File source;
+            File dest;
+            for (int i = 0; i < ficheros.length; i++) {
+                nombreFichero = ficheros[i];
+                pathArchivo = sourcePath + nombreFichero;
+                
+                source = new File(pathArchivo);
+                dest = new File(pathDestino + source.getName());
 
-            try {
-                is = new FileInputStream(source);
-                os = new FileOutputStream(dest);
-                byte[] buffer = new byte[1024];
-                int length;
-                while ((length = is.read(buffer)) > 0) {
-                    os.write(buffer, 0, length);
+                try {
+                    is = new FileInputStream(source);
+                    os = new FileOutputStream(dest);
+                    byte[] buffer = new byte[1024];
+                    int length;
+                    while ((length = is.read(buffer)) > 0) {
+                        os.write(buffer, 0, length);
+                    }
+                } finally {
+                    is.close();
+                    os.close();
                 }
-            } finally {
-                is.close();
-                os.close();
-            }
 
-            indexarNuevoDocumento(dest.getAbsolutePath());
+                indexarNuevoDocumento(dest.getAbsolutePath());
+            }
+            
+            
         }
     }
 
